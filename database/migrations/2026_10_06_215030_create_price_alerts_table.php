@@ -27,7 +27,7 @@ return new class extends Migration
             ]);
             $table->boolean('is_triggered')->default(false);
             $table->timestamp('triggered_at')->nullable();
-            $table->timestamp();
+            $table->timestamps();
             $table->index([
                 'asset_id', 
                 'is_triggered'

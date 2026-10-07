@@ -20,7 +20,7 @@ return new class extends Migration
             $table->decimal('high_price', 12, 4);
             $table->decimal('low_price', 12, 4);
             $table->timestamp('fetched_at');
-            $table->timestamp();
+            $table->timestamps();
             $table->index(['asset_id', 'fetched_at']);
         });
     }

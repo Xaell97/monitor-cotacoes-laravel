@@ -18,24 +18,24 @@ class Asset extends Model
         'low_price',
         'variation_24h',
     ];
-}
 
-protected function casts(): array
-{
-    return [
-        'current_price' => 'decimal:4',
-        'high_price' => 'decimal:4',
-        'low_price' => 'decimal:4',
-        'variation_24h' => 'decimal:2',
-    ];
-}
+    protected function casts(): array
+    {
+        return [
+            'current_price' => 'decimal:4',
+            'high_price' => 'decimal:4',
+            'low_price' => 'decimal:4',
+            'variation_24h' => 'decimal:2',
+        ];
+    }
 
-public function priceHistories()
-{
-    return $this->hasMany(PriceHistory::class);
-}
+    public function priceHistories()
+    {
+        return $this->hasMany(PriceHistory::class);
+    }
 
-public function alerts()
-{
-    return $this->hasMany(PriceAlert::class);
+    public function alerts()
+    {
+        return $this->hasMany(PriceAlert::class);
+    }
 }

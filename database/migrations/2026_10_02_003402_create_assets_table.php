@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('high_price', 12, 4)->default(0);
             $table->decimal('low_price', 12, 4)->default(0);
             $table->decimal('variation_24h', 12, 4)->default(0);
-            $table->timestamp();
+            $table->timestamps();
             $table->index('type');
         });
     }
