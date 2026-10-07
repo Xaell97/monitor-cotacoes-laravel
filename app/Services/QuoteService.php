@@ -11,13 +11,13 @@ class QuoteService
 {
     public function updateQuotes(): int
     {
-        $url = config('services.quote.url');
+        $url = config('services.quotes.url');
 
         $response = Http::timeout(15)
             ->retry(3, 500)
             ->get($url);
         
-        if ($response->successful()) {
+        if (!$response->successful()) {
             Log::warning('A API de contações retornou erro.', [
                 'status' => $response->status(),
             ]);
